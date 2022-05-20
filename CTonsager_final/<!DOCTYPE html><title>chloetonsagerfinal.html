@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>chloetonsagerfinal</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML, CSS,">
+    <meta name="author" content="chloetonsager">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+</style>
+</head>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-purple w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <div class="container">
+    <h3 class="padding-64"><b>CHLOE<br>TONSAGER</b></h3>
+  </div>
+  <div class="bar-block">
+    <a href="#" onclick="close()" class="w3-bar-item w3-button w3-hover-white">My Work</a>  
+    <a href="#packages" onclick="close()" class="w3-bar-item w3-button w3-hover-white">About Me</a> 
+    <a href="#contact" onclick="close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>CHLOE TONSAGER</span>
+</header>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 class="w3-jumbo"><b>My Work</b></h1>
+    <h1 class="w3-xxxlarge w3-text-Black"><b>Showcase.</b></h1>
+    <hr style="width:50px;border:5px solid rgb(181, 250, 160)" class="w3-round">
+
+  </div>
+  
+  <!-- Photo grid (modal) -->
+  <div class="w3-row-padding">
+    <div class="w3-half">
+      <img src="Screen Shot 2022-05-19 at 9.05.31 PM.png" style="width:100%" onclick="onClick(this)" alt="music poster">
+      <img src="Screen Shot 2022-05-19 at 9.17.20 PM.png" style="width:100%" onclick="onClick(this)" alt="digital painted poster design">
+    </div>
+
+    <div class="w3-half">
+      <img src="Screen Shot 2022-05-19 at 9.19.41 PM.png" style="width:100%" onclick="onClick(this)" alt="designer quote poster">
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- Packages / Pricing Tables -->
+  <div class="w3-container" id="packages" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-black"><b>About Me</b></h1>
+    <hr style="width:50px;border:5px solid rgb(181, 250, 160)" class="w3-round">
+    <body>
+       I am Chloe Tonsager, I am 19 and just about halfway throught my graphic design program at Dunwoody college of thecnology. I love all things creative, and all things design. Im always trying to learn more and improve with each design. I love creating something from scratch and seeing all the details come together! Take a look at my work above!!
+        
+
+
+       <div class="w3-half">
+        <img src="IMG_5706.JPG" style="width:80%" onclick="onClick(this)" alt="Me 1">
+      </div>
+
+
+
+
+    </body>
+   
+  
+  <!-- Contact -->
+  <div class="w3-container" id="contact" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-black"><b>Contact.</b></h1>
+    <hr style="width:50px;border:5px solid rgb(181, 250, 160)" class="w3-round">
+    <p>Do you need help rebranding? Need anything designed? Or looking to fire a graphic designer? Im who you want!</p>
+    <form action="/action_page.php" target="_blank">
+      <div class="w3-section">
+        <label>Name</label>
+        <input class="w3-input w3-border" type="text" name="Name" required>
+      </div>
+      <div class="w3-section">
+        <label>Email</label>
+        <input class="w3-input w3-border" type="text" name="Email" required>
+      </div>
+      <div class="w3-section">
+        <label>Message</label>
+        <input class="w3-input w3-border" type="text" name="Message" required>
+      </div>
+      <button type="submit" class="w3-button w3-block w3-padding-large w3-181, 260, 160 w3-margin-bottom">Send Message</button>
+    </form>  
+  </div>
+
+<!-- End page content -->
+</div>
+
+
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+</body>
+</html>
